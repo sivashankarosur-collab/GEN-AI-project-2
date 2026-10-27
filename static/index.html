@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TalentVerse — Skills & Career Intelligence</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>TalentVerse</h1>
+    <p>Skills &amp; Career Intelligence — turn resumes, goals and job descriptions into structured insight.</p>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-mode="profile">Build Profile</button>
+        <button class="tab" data-mode="career_plan">Career Plan</button>
+        <button class="tab" data-mode="job_match">Job Match</button>
+      </div>
+
+      <label id="roleLabel" for="targetRole">Target role (optional)</label>
+      <input id="targetRole" type="text" maxlength="100" placeholder="e.g. AI/ML Engineer">
+
+      <label id="mainLabel" for="mainText">Resume / profile text</label>
+      <textarea id="mainText" rows="9" maxlength="10000"></textarea>
+
+      <div id="profileBox" class="hidden">
+        <label for="profileText">Your profile / skills</label>
+        <textarea id="profileText" rows="6" maxlength="10000" placeholder="Paste your resume or list your skills..."></textarea>
+      </div>
+
+      <div class="actions">
+        <button id="analyzeBtn" class="primary">Analyze &amp; Save</button>
+        <button id="sampleBtn" class="ghost" type="button">Load sample</button>
+        <button id="clearBtn" class="ghost" type="button">Clear</button>
+      </div>
+      <div id="status" class="status" role="status"></div>
+    </section>
+
+    <section id="resultCard" class="card hidden"></section>
+
+    <section class="card">
+      <div class="row-between">
+        <h2>Saved records</h2>
+        <button id="refreshBtn" class="ghost" type="button">Refresh</button>
+      </div>
+      <div id="records" class="records"></div>
+    </section>
+  </main>
+
+  <footer>CSB312 CA3 Mini Project 2 · Option 9 · FastAPI + SQLite + Pydantic</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
